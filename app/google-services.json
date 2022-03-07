@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "653288737025",
+    "firebase_url": "https://child-monitoring-272ad-default-rtdb.firebaseio.com",
+    "project_id": "child-monitoring-272ad",
+    "storage_bucket": "child-monitoring-272ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653288737025:android:91b29d8b4311ae6508f300",
+        "android_client_info": {
+          "package_name": "com.example.childmonitoringchildversion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653288737025-5rrd6dj5tn6o2hkadv21in2mne7inhg7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0wsTzrJVPHalmgHYqK20iEE1y1nl2ML0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653288737025-5rrd6dj5tn6o2hkadv21in2mne7inhg7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653288737025:android:64a8d230a573542608f300",
+        "android_client_info": {
+          "package_name": "com.example.model"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653288737025-5rrd6dj5tn6o2hkadv21in2mne7inhg7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0wsTzrJVPHalmgHYqK20iEE1y1nl2ML0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653288737025-5rrd6dj5tn6o2hkadv21in2mne7inhg7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Child Information"
+            android:textColor="#FF9800"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/childName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:padding="10dp"
+            android:hint="Child Name"
+            android:textSize="15sp"></EditText>
+        <EditText
+            android:id="@+id/childParentEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Parent Email Address"
+            android:textSize="15sp"></EditText>
+        <EditText
+            android:id="@+id/childParentPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Parent Password"
+            android:textSize="15sp"></EditText>
+
+        <Button
+
+            android:id="@+id/childAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp"
+            android:text="Add Child"
+            android:padding="10dp"
+            android:textSize="15dp"
+            >
+
+        </Button>
+
+        <ProgressBar
+            android:layout_marginTop="20dp"
+            android:id="@+id/childProBar"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </ProgressBar>
+
+    </LinearLayout>
+
+</RelativeLayout>
