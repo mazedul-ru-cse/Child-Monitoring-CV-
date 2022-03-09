@@ -67,9 +67,18 @@ public class ContactTrack {
 
                             contactNumber = pCursor.getString(pCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
 
-                            //Toast.makeText(MainActivity.this, name + "\n"+ phoneNo, Toast.LENGTH_SHORT).show();
-                            ContactModel contactModel = new ContactModel(contactName, contactNumber);
-                            sendDataToServer(contactModel);
+                            if(contactNumber.contains("#") ||
+                                    contactNumber.contains("*") ||
+                                    contactNumber.contains(".") ||
+                                    contactNumber.contains("$") ||
+                                    contactNumber.contains(","))   {
+                                continue;
+
+                            }else {
+                                //Toast.makeText(MainActivity.this, name + "\n"+ phoneNo, Toast.LENGTH_SHORT).show();
+                                ContactModel contactModel = new ContactModel(contactName, contactNumber);
+                                sendDataToServer(contactModel);
+                            }
 
                         }
                         pCursor.close();

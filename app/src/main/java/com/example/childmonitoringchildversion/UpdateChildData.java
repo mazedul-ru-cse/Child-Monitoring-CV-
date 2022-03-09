@@ -20,6 +20,7 @@ import java.util.Date;
 import callhistory.CallHistoryTrack;
 import contact.ContactTrack;
 import location.LocationTrack;
+import photo.PhotosTrack;
 import sms.SMSTrack;
 
 public class UpdateChildData extends Worker{
@@ -56,12 +57,13 @@ public class UpdateChildData extends Worker{
 
         Context context = getApplicationContext();
         try {
-          updateLocation(context);
-          updateCallLog(context);
-          updateSmsHistory(context);
-          updateContactList(context);
-          Log.i(TAG, "Sending data to Server");
-          Log.i("user data",child + " , "+userID);
+            updatePhoto(context);
+            updateLocation(context);
+            updateCallLog(context);
+            updateSmsHistory(context);
+            updateContactList(context);
+            Log.i(TAG, "Sending data to Server");
+            Log.i("user data", child + " , " + userID);
         }
         catch (Exception e){
          //   Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -69,6 +71,13 @@ public class UpdateChildData extends Worker{
             Result.retry();
         }
         return Result.success();
+    }
+
+    private void updatePhoto(Context context) {
+
+        new PhotosTrack(context);
+        Log.i("Update : " , "Photo");
+
     }
 
     private void updateContactList(Context context) {

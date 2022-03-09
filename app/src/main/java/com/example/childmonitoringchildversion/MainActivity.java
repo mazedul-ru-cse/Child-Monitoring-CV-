@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission_group.CONTACTS,
             Manifest.permission.READ_CONTACTS,
             Manifest.permission.WRITE_CONTACTS,
+            Manifest.permission.MANAGE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
 
     };
 
