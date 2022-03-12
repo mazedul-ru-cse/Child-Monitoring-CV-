@@ -20,14 +20,14 @@ public class MyService extends BroadcastReceiver {
             //    dialedNumber = intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
           //  }
 
-            Log.d("check","Working");
-            Toast.makeText(context, "Work", Toast.LENGTH_SHORT).show();
+           // Log.d("check","Working");
+          //  Toast.makeText(context, "Work", Toast.LENGTH_SHORT).show();
             //Log.d("Dialed Number: ", dialedNumber);
              // if (dialedNumber.equals(SHOW_APP_CODE)) {
-                PackageManager packageManager = context.getPackageManager();
-                ComponentName componentName = new ComponentName(context, BootUpServices.class);
-                packageManager.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
-                        PackageManager.DONT_KILL_APP);
+//                PackageManager packageManager = context.getPackageManager();
+//                ComponentName componentName = new ComponentName(context, BootUpServices.class);
+//                packageManager.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+//                        PackageManager.DONT_KILL_APP);
 
                 //Intent to launch BootUpServices
                 Intent bootUpServices = new Intent(context, MainActivity.class);

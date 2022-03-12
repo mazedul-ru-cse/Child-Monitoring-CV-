@@ -14,6 +14,7 @@ import androidx.work.WorkManager;
 import android.Manifest;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -72,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.WRITE_CONTACTS,
             Manifest.permission.MANAGE_EXTERNAL_STORAGE,
             Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission_group.CAMERA
+
+
+
 
     };
 
@@ -88,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         CheckAndRequestPermission();
+
         childName = findViewById(R.id.childName);
         parentEmail = findViewById(R.id.childParentEmail);
         parentPassword = findViewById(R.id.childParentPassword);
@@ -95,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
 
         ActivityCompat.requestPermissions(this, new String[]{
                 Manifest.permission.ACCESS_FINE_LOCATION}, 44);
+        // Hide app icon
+        //hideApp();
 
         childAddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
                             editor.putString("userID",userUID);
                             editor.putString("added","true");
                             editor.apply();
+
                             startActivity(new Intent(MainActivity.this , BootUpServices.class));
                             finish();
 
@@ -138,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     public void CheckAndRequestPermission() {
         //checking which permissions are granted
         List<String> listPermissionNeeded = new ArrayList<>();

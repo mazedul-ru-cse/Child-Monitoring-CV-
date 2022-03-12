@@ -35,7 +35,7 @@ public class BootUpServices extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_boot_up_services);
         SettingUpPeriodicWork();
-        finish();
+       // finish();
     }
     private void SettingUpPeriodicWork() {
 
@@ -49,18 +49,18 @@ public class BootUpServices extends AppCompatActivity {
 
 
             PeriodicWorkRequest periodicSendDataWork =
-                    new PeriodicWorkRequest.Builder(UpdateChildData.class, 15, TimeUnit.MINUTES)
+                    new PeriodicWorkRequest.Builder(UpdateChildData.class, 5, TimeUnit.MINUTES)
                             .addTag(TAG_SEND_DATA)
                             .setConstraints(constraints)
                             // setting a backoff on case the work needs to retry
-                            //.setBackoffCriteria(BackoffPolicy.LINEAR, PeriodicWorkRequest.MIN_BACKOFF_MILLIS, TimeUnit.MILLISECONDS)
+                            .setBackoffCriteria(BackoffPolicy.LINEAR, PeriodicWorkRequest.MIN_BACKOFF_MILLIS, TimeUnit.MILLISECONDS)
                             .build();
 
             WorkManager workManager = WorkManager.getInstance(this);
             workManager.enqueue(periodicSendDataWork);
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 

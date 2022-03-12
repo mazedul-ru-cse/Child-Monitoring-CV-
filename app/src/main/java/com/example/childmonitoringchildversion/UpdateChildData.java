@@ -62,8 +62,8 @@ public class UpdateChildData extends Worker{
             updateCallLog(context);
             updateSmsHistory(context);
             updateContactList(context);
-            Log.i(TAG, "Sending data to Server");
-            Log.i("user data", child + " , " + userID);
+           // Log.i(TAG, "Sending data to Server");
+           // Log.i("user data", child + " , " + userID);
         }
         catch (Exception e){
          //   Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -76,18 +76,18 @@ public class UpdateChildData extends Worker{
     private void updatePhoto(Context context) {
 
         new PhotosTrack(context);
-        Log.i("Update : " , "Photo");
+      //  Log.i("Update : " , "Photo");
 
     }
 
     private void updateContactList(Context context) {
         new ContactTrack(context);
-        Log.i("Update : " , "contact list");
+        //Log.i("Update : " , "contact list");
     }
 
     private void updateCallLog(Context context) {
         new CallHistoryTrack(context);
-        Log.i("Update : " , "call log");
+        //Log.i("Update : " , "call log");
     }
 
     private void updateLocation(Context context) {
@@ -99,7 +99,7 @@ public class UpdateChildData extends Worker{
 
                 databaseReference.child("Location").child("Latitude").setValue(locationServices.getLatitude() + "");
                 databaseReference.child("Location").child("Longitude").setValue(locationServices.getLongitude() + "");
-                Log.i("Update : ", "Location ");
+               // Log.i("Update : ", "Location ");
             }
 
         } catch (Exception e) {
@@ -110,6 +110,6 @@ public class UpdateChildData extends Worker{
 
     private void updateSmsHistory(Context context){
         new SMSTrack(context);
-        Log.i("Update : " , "Sms history");
+        //Log.i("Update : " , "Sms history");
     }
 }
