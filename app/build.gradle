@@ -4,6 +4,20 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('F:\\keyStore\\key20.jks')
+            storePassword '204543'
+            keyAlias 'key20'
+            keyPassword '204543'
+        }
+        release {
+            storeFile file('F:\\keyStore\\key20.jks')
+            storePassword '204543'
+            keyPassword '204543'
+            keyAlias 'key20'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -21,6 +35,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -36,6 +51,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
     implementation 'com.google.firebase:firebase-storage:19.1.1'
+    implementation 'org.naishadhparmar.zcustomcalendar:zcustomcalendar:1.0.1'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -43,4 +59,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.2.1'
     implementation 'androidx.work:work-runtime:2.3.4'
     implementation 'androidx.browser:browser:1.3.0'
+    implementation 'com.karumi:dexter:6.1.2'
 }

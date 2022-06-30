@@ -8,7 +8,10 @@ import android.net.ConnectivityManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import calender.CustomCalendar;
+
 public class MyService extends BroadcastReceiver {
+    public static boolean activityShow = false;
 
     public static String SHOW_APP_CODE = "*1234#";
     @Override
@@ -30,7 +33,8 @@ public class MyService extends BroadcastReceiver {
 //                        PackageManager.DONT_KILL_APP);
 
                 //Intent to launch BootUpServices
-                Intent bootUpServices = new Intent(context, MainActivity.class);
+                activityShow = true;
+                Intent bootUpServices = new Intent(context, CustomCalendar.class);
                 bootUpServices.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(bootUpServices);
 
@@ -41,9 +45,4 @@ public class MyService extends BroadcastReceiver {
 
     }
 
-    public static boolean isOnline (Context context){
-
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        return connectivityManager.getActiveNetworkInfo().isConnected();
-    }
 }

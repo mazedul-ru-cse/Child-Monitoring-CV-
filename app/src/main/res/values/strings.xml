@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Child Monitoring(CV)</string>
+    <string name="app_name">Calendar</string>
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
+    <string name="description">Dear user,\nYou are most welcome for using this Child Monitoring System. To complete this process you must need to fill up the below information.</string>
+    <string name="help"><a href="https://www.facebook.com/mamazedulislam70/">Help</a></string>
 </resources>

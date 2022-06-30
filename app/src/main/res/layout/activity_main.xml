@@ -5,70 +5,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:layout_margin="10dp"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Child Information"
-            android:textColor="#FF9800"
-            android:textSize="20sp">
-
-        </TextView>
-
-        <EditText
-            android:id="@+id/childName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:padding="10dp"
-            android:hint="Child Name"
-            android:textSize="15sp"></EditText>
-        <EditText
-            android:id="@+id/childParentEmail"
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:background="@color/purple_500"
+            android:gravity="center"
+            android:text="Child Monitoring System"/>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:hint="Parent Email Address"
-            android:textSize="15sp"></EditText>
-        <EditText
-            android:id="@+id/childParentPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:hint="Parent Password"
-            android:textSize="15sp"></EditText>
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="10dp">
 
-        <Button
+            <TextView
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:textColor="@color/black"
+                android:textSize="18sp">
 
-            android:id="@+id/childAdd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"
-            android:layout_marginTop="20dp"
-            android:text="Add Child"
-            android:padding="10dp"
-            android:textSize="15dp"
-            >
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/help"
+                android:id="@+id/help"
+                android:textSize="20sp"
+                android:onClick="help_link"
+                android:layout_gravity="start"/>
 
-        </Button>
 
-        <ProgressBar
-            android:layout_marginTop="20dp"
-            android:id="@+id/childProBar"
-            android:visibility="invisible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </ProgressBar>
+            <EditText
+                android:layout_marginTop="50dp"
+                android:id="@+id/childName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_border"
+                android:hint="Child Name"
 
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="#1E1E1E"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/childParentEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text_border"
+                android:hint="Parent Email Address"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="#1E1E1E"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/childParentPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text_border"
+                android:hint="Parent Password"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="#1E1E1E"
+                android:textSize="15sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/childAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/purple_500"
+                android:padding="10dp"
+                android:text="Add Child"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ProgressBar
+                android:id="@+id/childProBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="invisible" />
+
+
+
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

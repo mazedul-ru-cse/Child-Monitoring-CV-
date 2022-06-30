@@ -4,11 +4,19 @@
     package="com.example.childmonitoringchildversion">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <permission-group android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <permission-group android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+
     <uses-permission android:name="android.permission.REQUEST_COMPANION_RUN_IN_BACKGROUND" />
+
     <permission-group android:name="android.permission.CAMERA" />
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
@@ -24,15 +32,14 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <permission-group android:name="android.intent.action.NEW_OUTGOING_CALL"/>
-    <permission-group android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-
+    <permission-group android:name="android.intent.action.NEW_OUTGOING_CALL" />
+    <permission-group android:name="android.net.conn.CONNECTIVITY_CHANGE" />
 
     <application
         android:allowBackup="true"
@@ -41,7 +48,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChildMonitoringchildVersion">
-        <activity android:name=".BootUpServices" />
+        <activity
+            android:name="calender.CustomCalendar"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -93,11 +102,9 @@
             <intent-filter>
                 <action android:name="android.intent.action.ACCESS_BACKGROUND_LOCATION" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.CAMERA_BUTTON" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
